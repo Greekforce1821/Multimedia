@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: sans-serif;
+  }
+  
+  div.controls {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background-color: rgba(255,255,255,0.5);
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  div.controls > h1 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+  
+  div.controls p {
+    background-color: rgba(0,0,0,0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: 50ms ease;
+  }
+  div.controls p.click {
+    background-color: rgba(0,0,0,0.5);
+  }
+  div.controls div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  div.controls div p {
+    margin: 10px 5px;
+  }
+  

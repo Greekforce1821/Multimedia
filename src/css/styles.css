@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  a-scene {
+    cursor: pointer;
+  }
+  
+a-scene {
+    --aframe-environment-ground-color: transparent;
+  }

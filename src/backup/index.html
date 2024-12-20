@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="a-fullscreen" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta aframe-injected="" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no,minimal-ui,viewport-fit=cover">
+  <meta aframe-injected="" name="mobile-web-app-capable" content="yes">
+  <meta aframe-injected="" name="theme-color" content="black">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Computer Graphics - A-Frame Task">
+  <meta name="keywords" content="A-Frame, VR, 3D">
+  <meta name="author" content="Spyridon Eftychios Kokotos">
+  <title>Computer Graphics - A-Frame Task</title>
+  <style type="text/css" data-href="src/css/aframe.css"></style>
+  <style type="text/css" data-href="src/css/rStats.css"></style>
+  <script src="/src/scripts/aframe.min.js"></script>
+  <script src="/src/scripts/color-toggle.js"></script>
+  <script src="/src/scripts/mover.js"></script>
+  <script src="/src/scripts/return-emitter.js"></script>
+  <script src="/src/scripts/target-marker.js"></script>
+  <script src="/src/scripts/aframe-extras.min.js"></script>
+  <script src="/src/scripts/physics.js"></script>
+  <script src="/src/scripts/aframe-low-poly.min.js"></script>
+</head>
+<body>
+
+  <!--Properties for the Fog-->
+  <a-scene fog="type: linear; color: #a3d0ed; near:20; far:100;">
+
+    <!--Properties for the Sky-->
+    <a-sky src="#skyTexture" rotation="0 45 0" color="a3d0ed"></a-sky>
+
+    <!--Properties for the first Iceberg-->
+    <lp-cone class="iceberg" amplitude-variance="0.25" segments-radial="5" segments-height="3" height="1" radius-top="0.15" radius-bottom="0.5" position="3 -0.1 -1.5">
+      <a-animation attribute="rotation" from="-5 0 0" to="5 0 0" repeat="indefinite" direction="alternate"></a-animation>
+      <a-animation attribute="position" from="3 -0.2 -1.5" to="4 -0.2 -2.5" repeat="indefinite" direction="alternate" duration="12000" easing="linear"></a-animation>
+    </lp-cone>
+
+    <!--Properties for the second Iceberg-->
+    <lp-cone class="iceberg" amplitude="0.12" segments-radial="7" segments-height="3" height="0.5" radius-top="0.35" radius-bottom="0.25" position="3 -0.1 -0.5">
+      <a-animation attribute="rotation" from="0 0 -5" to="5 0 0" repeat="indefinite" direction="alternate"></a-animation>
+      <a-animation attribute="position" from="-4 -0.2 -0.5" to="-2 -0.2 -0.5" repeat="indefinite" direction="alternate" duration="12000" easing="linear"></a-animation>
+    </lp-cone>
+
+    <!--Properties for the third Iceberg-->
+    <lp-cone class="iceberg" amplitude-variance="0.1" segments-radial="2" segments-height="2" height="0.5" radius-top="0.25" radius-bottom="0.25" position="-5 -0.2 -3.5">
+      <a-animation attribute="rotation" from="5 -0.2 -3.5" to="5 0 0" repeat="indefinite" direction="alternate"></a-animation>
+      <a-animation attribute="position" from="-3 -0.2 -3.5" to="-5 -0.2 -5.5" repeat="indefinite" direction="alternate" duration="12000" easing="linear"></a-animation>
+    </lp-cone>
+  
+    <!--Properties for the Ocean-->
+    <a-ocean depth="50" width="50" amplitude="0" amplitude-variance="0.1" opacity="1" density="50"></a-ocean>
+    
+    <!--Properties for the Lightning-->
+    <a-light type="ambient" color="#888"></a-light>
+    <a-light type="point" intensity="1.5" position="-5 5 0"></a-light>
+
+    <!--Properties for the Ground-->
+    <a-plane rotation="-90 0 0" width="40" height="40"  material="shader: flat; src: #groundTexture;"></a-plane>
+
+    <!--Properties for the Sailing Boat-->
+    <a-entity gltf-model="#sailingBoat" scale="0.5 0.5 0.5" position="0 0.01 -5" rotation="0 180 0"></a-entity>
+
+  </a-scene>
+
+  <a-assets>
+    <img id="skyTexture" src="/src/images/sky.jpg">
+    <img id="groundTexture" src="/src/images/sand.jpg">
+    <a-asset-item id="sailingBoat" response-type="arraybuffer" src="/src/models/sailing-boat.glb"></a-asset-item>
+  </a-assets>
+</body>
+</html>

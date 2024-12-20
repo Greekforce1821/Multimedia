@@ -1,0 +1,26 @@
+#helpTable {
+  width: 30%;
+  border-collapse: collapse; 
+  table-layout: fixed; 
+}
+
+
+#helpTable td, #helpTable th {
+  border: 1px solid #ffffff;
+  padding: 8px; 
+  overflow-wrap: break-word; 
+}
+
+#helpTable th {
+  background-color: #04AA6D; 
+  color: rgb(0, 0, 0); 
+  text-align: left; 
+}
+
+#helpTable tr:nth-child(even) 
+#helpTable tr:hover {background-color: #ddd;}
+
+#helpTable td:first-child, #helpTable th:first-child {
+  width: 10px; 
+}
+
