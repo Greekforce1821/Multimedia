@@ -1,0 +1,234 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  background-color: #00264d; 
+  color: white; 
+}
+
+#poseidonUI {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#poseidonMessage {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: #003366; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+  color: #f0f0f0; 
+  text-align: center;
+}
+
+#poseidonMessage h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #04AA6D; 
+}
+
+
+#poseidonMessage a {
+  color: #04AA6D; 
+  text-decoration: underline; 
+  font-weight: bold; 
+  transition: color 0.3s ease; 
+}
+
+#poseidonMessage a:hover {
+  color: #028a50; 
+  text-decoration: none; 
+}
+
+#poseidonMessage p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.poseidonButtonContainer button {
+  margin: 10px;
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  background-color: #04AA6D; 
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase; 
+}
+
+.poseidonButtonContainer button:hover {
+  background-color: #028a50; 
+  transform: scale(1.05); 
+}
+
+.poseidonLogoLeft, .poseidonLogoRight {
+  position: absolute;
+  max-height: 80px; 
+  z-index: 1010;
+}
+
+.poseidonLogoLeft {
+  top: 20px;
+  left: 20px;
+}
+
+.poseidonLogoRight {
+  top: 20px;
+  right: 20px;
+}
+
+#poseidonButton {
+  position: fixed;
+  bottom: 70px;
+  right: 25px;
+  z-index: 1010;
+}
+
+#poseidonButton img {
+  width: 50px; 
+  height: 50px;
+  cursor: pointer;
+}
+
+
+.photo-carousel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2000;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-image {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  display: block;
+  margin: auto;
+
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+}
+
+#prevposeidonBtn {
+  left: 10px;
+}
+
+#nextposeidonBtn {
+  right: 10px;
+}
+
+.close-carousel {
+  margin-top: 20px;
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.close-carousel:hover {
+  background: red;
+}
+
+.youtube-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1100;
+  justify-content: center;
+  align-items: center;
+}
+
+.youtube-container iframe {
+  width: 80%;
+  height: 60%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8);
+  pointer-events: auto;
+}
+
+.youtube-container button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.youtube-container button:hover {
+  background-color: darkred;
+}
+
+#closeYoutubeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 9999; 
+  padding: 10px;
+  font-size: 16px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

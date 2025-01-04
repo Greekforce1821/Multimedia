@@ -17,11 +17,18 @@
   <script src="/src/scripts/aframe-raycaster.js"></script>
   <script src="/src/scripts/a-frame-environment-component.min.js"></script>
   <script src="/src/scripts/day-night-toggle.js"></script>
+  <script src="/src/scripts/mistralUI.js" defer></script>
+  <script src="/src/scripts/mormugaoUI.js"></script>
+  <script src="/src/scripts/vclassUI.js"></script>
+  <script src="/src/scripts/poseidonUI.js"></script>
   <style type="text/css" data-href="src/css/aframe.css"></style>
   <style type="text/css" data-href="src/css/rStats.css"></style>
   <style type="text/css" data-href="src/css/styles.css"></style>
   <link rel="stylesheet" href="/src/css/help.css">
-  <link rel="stylesheet" href="/src/css/titanic.css">
+  <link rel="stylesheet" href="/src/css/mistralUI.css">
+  <link rel="stylesheet" href="/src/css/mormugaoUI.css">
+  <link rel="stylesheet" href="/src/css/vclassUI.css">
+  <link rel="stylesheet" href="/src/css/poseidonUI.css">
   <!--<link rel="stylesheet" href="/src/css/welcome.css">-->
   <link rel="stylesheet" href="/src/css/array.css">
   <link rel="icon" href="/src/favicon/" type="image/x-icon">
@@ -29,7 +36,7 @@
 </head>
 <body>
 
-  <!--Properties for the Help Button-->
+<!--Properties for the Help Button-->
 <a id="helpIcon">
   <img src="/src/images/help.png" alt="Help" style="width: 50px; height: 50px;">
 </a>
@@ -145,6 +152,7 @@
   <!--Properties for Ocean floor-->
   <a-ocean width="100" depth="100" density="30" opacity="1" position="0 0.9 0" shadow="receive: true; cast: true;"></a-ocean>
 
+
   <!--Properties for the Lighthouse-->
   <a-entity position="-40 1.3 -36" scale="4.5 4.5 4.5" rotation="0 0 0" gltf-model="#lighthouse" id="#lighthouse" clickable="" day-night-toggle=""></a-entity>
 
@@ -152,13 +160,61 @@
   <a-entity position="-57 5 -50" scale="1 1 1" rotation="0 0 0" gltf-model="#seagulls" id="#seagulls" clickable="" animation-mixer=""></a-entity>
 
   <!--Properties for the Mistral | France -->
-  <a-entity position="30 -1 -36" scale="4.5 4.5 4.5" rotation="0 360 0" gltf-model="#mistral" id="#mistral" clickable=""></a-entity>
+  <a-entity position="30 -1 -36" scale="4.5 4.5 4.5" rotation="0 360 0" gltf-model="#mistral" id="#mistral" clickable="" mistral-ui=""></a-entity>
 
+  <!-- Properties for the Mistral UI -->
+  <div id="mistralUI" style="display: none;">
+    <div id="mistralMessage">
+      <h2>Mistral France Navy Boat</h2>
+      <div id="mistralContent"></div>
+      <div class="mistralButtonContainer">
+        <button id="mistralInfoButton">Πληροφορίες</button>
+        <button id="mistralPlaySoundButton">Aναπαραγωγή Βίντεο</button>
+        <button id="mistralPhotoAlbumButton">Άλμπουμ Φωτογραφιών</button>
+        <button id="mistralCloseButton">Έξοδος</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Properties for the Mistral Carousel Photo Album -->
+  <div id="mistralCarousel" class="photo-carousel" style="display: none;">
+    <div class="carousel-container">
+      <button id="prevMistralBtn" class="carousel-btn">❮</button>
+      <img id="mistralCarouselImage" class="carousel-image" src="" alt="Mistral Photo">
+      <button id="nextMistralBtn" class="carousel-btn">❯</button>
+    </div>
+    <button id="closeMistralBtn" class="close-carousel">Κλείσιμο</button>
+  </div> 
+  
   <!--Properties for the Flag of France -->
   <a-entity position="23.5 -0.3 -20" scale="26 26 26" rotation="0 -90 0" gltf-model="#flag_france" flag-interaction="" animation-mixer=""></a-entity>
 
   <!--Properties for the HS Poseidon | Greece -->
-  <a-entity position="45 -1 -36" scale="0.5 0.5 0.5" rotation="0 360 0" gltf-model="#poseidon" id="#poseidon" clickable=""></a-entity>
+  <a-entity position="45 -1 -36" scale="0.5 0.5 0.5" rotation="0 360 0" gltf-model="#poseidon" id="#poseidon" clickable="" poseidon-ui=""></a-entity>
+
+  <!-- Properties for the Poseidon UI -->
+  <div id="poseidonUI" style="display: none;">
+    <div id="poseidonMessage">
+      <h2>Poseidon Greek Navy Ship</h2>
+      <div id="poseidonContent"></div>
+      <div class="poseidonButtonContainer">
+        <button id="poseidonInfoButton">Πληροφορίες</button>
+        <button id="poseidonPlaySoundButton">Aναπαραγωγή Βίντεο</button>
+        <button id="poseidonPhotoAlbumButton">Άλμπουμ Φωτογραφιών</button>
+        <button id="poseidonCloseButton">Έξοδος</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Properties for the Poseidon Carousel Photo Album -->
+  <div id="poseidonCarousel" class="photo-carousel" style="display: none;">
+    <div class="carousel-container">
+      <button id="prevposeidonBtn" class="carousel-btn">❮</button>
+      <img id="poseidonCarouselImage" class="carousel-image" src="" alt="Mistral Photo">
+      <button id="nextposeidonBtn" class="carousel-btn">❯</button>
+    </div>
+    <button id="closeposeidonBtn" class="close-carousel">Κλείσιμο</button>
+  </div>
 
   <!--Properties for the Pier -->
   <a-entity position="40 -0.3 -33" scale="4 4 4" rotation="0 0 0" gltf-model="#pier" id="#pier"></a-entity>
@@ -170,27 +226,61 @@
   <a-light id="lighthouseLight" type="spot" position="-42.1 21 -28.5" intensity="0" angle="40" color="#ffcc00" castShadow="true" target="#lighthouse" animation="property: rotation; to: 0 360 0; loop: true; dur: 7000"></a-light>
 
   <!--Properties for the V Class Destroyer | United Kingdom -->
-  <a-entity position="0 0.8 -33" scale="0.5 0.5 0.5" rotation="0 0 0" gltf-model="#british_v_class" id="#british_v_class"  clickable></a-entity>
+  <a-entity position="0 0.8 -33" scale="0.5 0.5 0.5" rotation="0 0 0" gltf-model="#british_v_class" id="#british_v_class"  clickable="" vclass-ui=""></a-entity>
+
+  <!-- Properties for the V Class Destroyer UI -->
+  <div id="vclassUI" style="display: none;">
+    <div id="vclassMessage">
+      <h2>V Class Destroyer British Navy Ship</h2>
+      <div id="vclassContent"></div>
+      <div class="vclassButtonContainer">
+        <button id="vclassInfoButton">Πληροφορίες</button>
+        <button id="vclassPlaySoundButton">Aναπαραγωγή Βίντεο</button>
+        <button id="vclassPhotoAlbumButton">Άλμπουμ Φωτογραφιών</button>
+        <button id="vclassCloseButton">Έξοδος</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Properties for the V Class Destroyer Carousel Photo Album -->
+  <div id="vclassCarousel" class="photo-carousel" style="display: none;">
+    <div class="carousel-container">
+      <button id="prevvclassBtn" class="carousel-btn">❮</button>
+      <img id="vclassCarouselImage" class="carousel-image" src="" alt="V Class Destroyer Photo">
+      <button id="nextvclassBtn" class="carousel-btn">❯</button>
+    </div>
+    <button id="closevclassBtn" class="close-carousel">Κλείσιμο</button>
+  </div>
 
   <!--Properties for the Flag of United Kingdom -->
   <a-entity position="-10 0 -20" scale="0.010 0.010 0.010" rotation="0 -90 0" gltf-model="#flag_uk" flag-interaction="" animation-mixer=""></a-entity>
 
   <!--Properties for the INS Mormugao | India -->
-  <a-entity position="15 0.5 -33" scale="5 5 5" rotation="0 -90 0" gltf-model="#titanic" id="#titanic" titanic-ui></a-entity>
+  <a-entity position="15 0.5 -33" scale="5 5 5" rotation="0 -90 0" gltf-model="#titanic" id="#titanic" clickable="" mormugao-ui=""></a-entity>
 
-<div id="popup">
-  <p><strong>Titanic</strong></p>
-  <p>Το RMS Titanic ήταν ένα διάσημο υπερωκεάνιο που βυθίστηκε το 1912.</p>
-  <button id="play-sound">Παίξε Ήχο</button>
-  <button id="close-popup">Κλείσιμο</button>
+ <!-- Properties for the Mormugao UI -->
+ <div id="mormugaoUI" style="display: none;">
+  <div id="mormugaoMessage">
+    <h2>Mormugao Indian Navy Ship</h2>
+    <div id="mormugaoContent"></div>
+    <div class="mormugaoButtonContainer">
+      <button id="mormugaoInfoButton">Πληροφορίες</button>
+      <button id="mormugaoPlaySoundButton">Aναπαραγωγή Βίντεο</button>
+      <button id="mormugaoPhotoAlbumButton">Άλμπουμ Φωτογραφιών</button>
+      <button id="mormugaoCloseButton">Έξοδος</button>
+    </div>
+  </div>
 </div>
 
-<audio id="titanic-sound" src="path/to/your/sound.mp3"></audio>
-
-
-<!-- Ενσωμάτωση ήχου -->
-<audio id="titanicSound" src="/src/audio/titanic_theme.mp3"></audio>
-  
+<!-- Properties for the V Class Destroyer Carousel Photo Album -->
+<div id="mormugaoCarousel" class="photo-carousel" style="display: none;">
+  <div class="carousel-container">
+    <button id="prevmormugaoBtn" class="carousel-btn">❮</button>
+    <img id="mormugaoCarouselImage" class="carousel-image" src="" alt="Mormugao Photo">
+    <button id="nextmormugaoBtn" class="carousel-btn">❯</button>
+  </div>
+  <button id="closevclassBtn" class="close-carousel">Κλείσιμο</button>
+</div>
 
   <!--Properties for the Flag of India -->
   <a-entity position="9 0 -20" scale="0.010 0.010 0.010" rotation="0 -90 0" gltf-model="#flag_india" flag-interaction="" animation-mixer=""></a-entity>
