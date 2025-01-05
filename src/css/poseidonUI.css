@@ -25,9 +25,11 @@ html, body {
 
 #poseidonMessage {
   max-width: 800px;
+  max-height: 90vh;
+  overflow: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 30px;
   border-radius: 15px;
@@ -35,6 +37,25 @@ html, body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
   color: #f0f0f0; 
   text-align: center;
+}
+
+#poseidonMessage ul {
+  list-style-type: disc; 
+  margin: 20px 40px; 
+  padding: 0; 
+  text-align: left; 
+}
+
+#poseidonMessage ul li {
+  font-size: 1rem; 
+  line-height: 1.8; 
+  margin-bottom: 10px; 
+  color: #dcdcdc; 
+}
+
+#poseidonMessage ul li::marker {
+  color: #04AA6D; 
+  font-size: 1.2rem; 
 }
 
 #poseidonMessage h1 {
