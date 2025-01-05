@@ -1,0 +1,97 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+  }
+  
+  #infoUI {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; 
+    background: rgba(0, 0, 0, 0.75); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+  }
+
+  #infoIcon {
+    position: fixed;
+    bottom: 130px;
+    right: 25px;
+    z-index: 1010;
+  }
+  
+  #infoIcon img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer; 
+  }
+  
+  #infoMessage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+  }
+  
+  #logoTopLeft {
+    position: absolute;
+    top: 10px; 
+    left: 10px;
+    max-height: 100px; 
+    max-width: 100px; 
+    z-index: 1010;
+  }
+  
+  #logoTopRight {
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
+    max-height: 100px; 
+    max-width: 300px;
+    z-index: 1010;
+  }
+
+  #infoFooter {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5); 
+    color: white;
+    font-size: 0.9em;
+    z-index: 1010;
+  }
+
+  .footer-bottom p {
+    font-size: 1.2em;
+    margin: 0; 
+    padding: 5px 0; 
+    color: white; 
+  }
+
+  #closeInfo {
+    background-color: #ff5722; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#closeInfoButton:hover {
+    background-color: #e64a19; 
+    transform: scale(1.05); 
+}

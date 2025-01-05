@@ -5,12 +5,14 @@ AFRAME.registerComponent('vclass-ui', {
     const vclassInfoButton = document.getElementById("vclassInfoButton");
     const vclassPlaySoundButton = document.getElementById("vclassPlaySoundButton");
     const vclassPhotoAlbumButton = document.getElementById("vclassPhotoAlbumButton");
+    const vclassMoverButton = document.getElementById("vclassMoverButton");
     const vclassContent = document.getElementById("vclassContent");
     const vclassCarousel = document.getElementById("vclassCarousel");
     const vclassCarouselImage = document.getElementById("vclassCarouselImage");
     const vclassCloseCarouselBtn = document.getElementById("closevclassBtn");
     const vclassNextPhotoBtn = document.getElementById("nextvclassBtn");
     const vclassPrevPhotoBtn = document.getElementById("prevvclassBtn");
+    const vclassEntity = document.querySelector("#vclassEntity");
     
     
     // The Creation of the YouTube Modal
@@ -90,6 +92,26 @@ AFRAME.registerComponent('vclass-ui', {
       vclassUI.style.display = "none";
     });
 
+    // Move Boat
+    vclassMoverButton.addEventListener("click", () => {
+      vclassUI.style.display = "none"; 
+
+      // Save the Current Possition of the Boat
+      const currPosition = vclassEntity.getAttribute("position");
+
+      // Move the Boat 20 units forward on the Z-axis
+      const targetPosition = { x: currPosition.x, y: currPosition.y, z: currPosition.z + 20 };
+
+      // Adjust the Boat's Position
+      vclassEntity.setAttribute("animation", {
+        property: "position",
+        to: `${targetPosition.x} ${targetPosition.y} ${targetPosition.z}`,
+        dur: 10000,
+        easing: "easeInOutQuad"
+      });
+
+    });
+
     // Info Tab
     vclassInfoButton.addEventListener("click", () => {
       vclassContent.innerHTML = `
@@ -134,6 +156,7 @@ AFRAME.registerComponent('vclass-ui', {
       </ul>
       <p>
         Πηγή: <a href="https://en.wikipedia.org/wiki/V_and_W-class_destroyer" target="_blank">Wikipedia</a>
+        Μετάφραση: DeepL
       </p>
     `;
   });
@@ -145,6 +168,7 @@ AFRAME.registerComponent('vclass-ui', {
         vclassPhotoIndex = 0;
         vclassCarouselImage.src = vclassPhotos[vclassPhotoIndex];
         vclassCarousel.style.display = "flex";
+        vclassCarouselImage.classList.add("fade-in");
         console.log("Το καρουζέλ εμφανίστηκε με την εικόνα:", vclassPhotos[vclassPhotoIndex]);
       } else {
         console.error("Δεν υπάρχουν φωτογραφίες στο άλμπουμ.");

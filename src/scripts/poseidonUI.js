@@ -5,12 +5,14 @@ AFRAME.registerComponent('poseidon-ui', {
     const poseidonInfoButton = document.getElementById("poseidonInfoButton");
     const poseidonPlaySoundButton = document.getElementById("poseidonPlaySoundButton");
     const poseidonPhotoAlbumButton = document.getElementById("poseidonPhotoAlbumButton");
+    const poseidonMoverButton = document.getElementById("poseidonMoverButton");
     const poseidonContent = document.getElementById("poseidonContent");
     const poseidonCarousel = document.getElementById("poseidonCarousel");
     const poseidonCarouselImage = document.getElementById("poseidonCarouselImage");
     const poseidonCloseCarouselBtn = document.getElementById("closeposeidonBtn");
     const poseidonNextPhotoBtn = document.getElementById("nextposeidonBtn");
     const poseidonPrevPhotoBtn = document.getElementById("prevposeidonBtn");
+    const poseidonEntity = document.querySelector("#poseidonEntity");
     
     
     // The Creation of the YouTube Modal
@@ -90,6 +92,26 @@ AFRAME.registerComponent('poseidon-ui', {
       poseidonUI.style.display = "none";
     });
 
+    // Move Boat
+    poseidonMoverButton.addEventListener("click", () => {
+      poseidonUI.style.display = "none"; 
+
+      // Save the Current Possition of the Boat
+      const currPosition = poseidonEntity.getAttribute("position");
+
+      // Move the Boat 20 units forward on the Z-axis
+      const targetPosition = { x: currPosition.x, y: currPosition.y, z: currPosition.z + 20 };
+
+      // Adjust the Boat's Position
+      poseidonEntity.setAttribute("animation", {
+        property: "position",
+        to: `${targetPosition.x} ${targetPosition.y} ${targetPosition.z}`,
+        dur: 10000,
+        easing: "easeInOutQuad"
+      });
+
+    });
+
     // Info Tab
     poseidonInfoButton.addEventListener("click", () => {
       poseidonContent.innerHTML = `
@@ -130,6 +152,7 @@ AFRAME.registerComponent('poseidon-ui', {
         poseidonPhotoIndex = 0;
         poseidonCarouselImage.src = poseidonPhotos[poseidonPhotoIndex];
         poseidonCarousel.style.display = "flex";
+        poseidonCarouselImage.classList.add("fade-in");
         console.log("Το καρουζέλ εμφανίστηκε με την εικόνα:", poseidonPhotos[poseidonPhotoIndex]);
       } else {
         console.error("Δεν υπάρχουν φωτογραφίες στο άλμπουμ.");

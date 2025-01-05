@@ -5,12 +5,14 @@ AFRAME.registerComponent('mistral-ui', {
       const mistralInfoButton = document.getElementById("mistralInfoButton");
       const mistralPlaySoundButton = document.getElementById("mistralPlaySoundButton");
       const mistralPhotoAlbumButton = document.getElementById("mistralPhotoAlbumButton");
+      const mistralMoverButton = document.getElementById("mistralMoverButton");
       const mistralContent = document.getElementById("mistralContent");
       const mistralCarousel = document.getElementById("mistralCarousel");
       const mistralCarouselImage = document.getElementById("mistralCarouselImage");
       const mistralCloseCarouselBtn = document.getElementById("closeMistralBtn");
       const mistralNextPhotoBtn = document.getElementById("nextMistralBtn");
       const mistralPrevPhotoBtn = document.getElementById("prevMistralBtn");
+      const mistralEntity = document.querySelector("#mistralEntity");
       
       
       // The Creation of the YouTube Modal
@@ -89,6 +91,26 @@ AFRAME.registerComponent('mistral-ui', {
       mistralCloseButton.addEventListener("click", () => {
         mistralUI.style.display = "none";
       });
+
+      // Move Boat
+    mistralMoverButton.addEventListener("click", () => {
+      mistralUI.style.display = "none"; 
+
+      // Save the Current Possition of the Boat
+      const currPosition = mistralEntity.getAttribute("position");
+
+      // Move the Boat 20 units forward on the Z-axis
+      const targetPosition = { x: currPosition.x, y: currPosition.y, z: currPosition.z + 20 };
+
+      // Adjust the Boat's Position
+      mistralEntity.setAttribute("animation", {
+        property: "position",
+        to: `${targetPosition.x} ${targetPosition.y} ${targetPosition.z}`,
+        dur: 10000,
+        easing: "easeInOutQuad"
+      });
+
+    });
   
       // Info Tab
       mistralInfoButton.addEventListener("click", () => {
@@ -122,6 +144,7 @@ AFRAME.registerComponent('mistral-ui', {
           mistralPhotoIndex = 0;
           mistralCarouselImage.src = mistralPhotos[mistralPhotoIndex];
           mistralCarousel.style.display = "flex";
+          mistralCarouselImage.classList.add("fade-in");
           console.log("Το καρουζέλ εμφανίστηκε με την εικόνα:", mistralPhotos[mistralPhotoIndex]);
         } else {
           console.error("Δεν υπάρχουν φωτογραφίες στο άλμπουμ.");

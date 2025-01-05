@@ -163,7 +163,7 @@ html, body {
 }
 
 .carousel-btn {
-  position: absolute;
+  position: fixed;
   top: 50%;
   transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.6);
@@ -172,6 +172,8 @@ html, body {
   border: none;
   cursor: pointer;
   padding: 10px;
+  transition: background 0.3s ease, transform 0.3s ease; 
+  z-index: 3000;
 }
 
 .carousel-btn:hover {
@@ -180,11 +182,24 @@ html, body {
 }
 
 #prevvclassBtn {
-  left: 10px;
+  left: 20px;
 }
 
 #nextvclassBtn {
-  right: 10px;
+  right: 20px;
+}
+
+.carousel-image {
+  transition: transform 0.5s ease, opacity 0.5s ease; 
+}
+
+.carousel-container img {
+  opacity: 1;
+}
+
+.carousel-container img.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
 }
 
 .close-carousel {
@@ -196,6 +211,7 @@ html, body {
   cursor: pointer;
   padding: 10px 20px;
   border-radius: 5px;
+  z-index: 3000;
 }
 
 .close-carousel:hover {

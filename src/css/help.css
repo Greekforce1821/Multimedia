@@ -24,6 +24,13 @@ html, body {
     right: 25px;
     z-index: 1010;
   }
+
+  #infoIcon {
+    position: fixed;
+    bottom: 130px;
+    right: 25px;
+    z-index: 1010;
+  }
   
   #helpIcon img {
     width: 40px;
@@ -73,8 +80,25 @@ html, body {
   }
 
   .footer-bottom p {
-    font-size: 3em;
+    font-size: 1.2em;
     margin: 0; 
     padding: 5px 0; 
     color: white; 
   }
+
+  #closeHelp {
+    background-color: #ff5722; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#closeHelpButton:hover {
+    background-color: #e64a19; 
+    transform: scale(1.05); 
+}

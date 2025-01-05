@@ -5,12 +5,14 @@ AFRAME.registerComponent('mormugao-ui', {
     const mormugaoInfoButton = document.getElementById("mormugaoInfoButton");
     const mormugaoPlaySoundButton = document.getElementById("mormugaoPlaySoundButton");
     const mormugaoPhotoAlbumButton = document.getElementById("mormugaoPhotoAlbumButton");
+    const mormugaoMoverButton = document.getElementById("mormugaoMoverButton");
     const mormugaoContent = document.getElementById("mormugaoContent");
     const mormugaoCarousel = document.getElementById("mormugaoCarousel");
     const mormugaoCarouselImage = document.getElementById("mormugaoCarouselImage");
     const mormugaoCloseCarouselBtn = document.getElementById("closemormugaoBtn");
     const mormugaoNextPhotoBtn = document.getElementById("nextmormugaoBtn");
     const mormugaoPrevPhotoBtn = document.getElementById("prevmormugaoBtn");
+    const mormugaoEntity = document.querySelector("#mormugaoEntity");
     
     
     // The Creation of the YouTube Modal
@@ -90,6 +92,26 @@ AFRAME.registerComponent('mormugao-ui', {
       mormugaoUI.style.display = "none";
     });
 
+    // Move Boat
+    mormugaoMoverButton.addEventListener("click", () => {
+      mormugaoUI.style.display = "none"; 
+
+      // Save the Current Possition of the Boat
+      const currPosition = mormugaoEntity.getAttribute("position");
+
+      // Move the Boat 20 units forward on the Z-axis
+      const targetPosition = { x: currPosition.x, y: currPosition.y, z: currPosition.z + 20 };
+
+      // Adjust the Boat's Position
+      mormugaoEntity.setAttribute("animation", {
+        property: "position",
+        to: `${targetPosition.x} ${targetPosition.y} ${targetPosition.z}`,
+        dur: 10000,
+        easing: "easeInOutQuad"
+      });
+
+    });
+
     // Info Tab
     mormugaoInfoButton.addEventListener("click", () => {
       mormugaoContent.innerHTML = `
@@ -133,6 +155,7 @@ AFRAME.registerComponent('mormugao-ui', {
         mormugaoPhotoIndex = 0;
         mormugaoCarouselImage.src = mormugaoPhotos[mormugaoPhotoIndex];
         mormugaoCarousel.style.display = "flex";
+        mormugaoCarouselImage.classList.add("fade-in");
         console.log("Το καρουζέλ εμφανίστηκε με την εικόνα:", mormugaoPhotos[mormugaoPhotoIndex]);
       } else {
         console.error("Δεν υπάρχουν φωτογραφίες στο άλμπουμ.");

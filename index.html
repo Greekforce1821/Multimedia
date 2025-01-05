@@ -10,42 +10,109 @@
   <meta name="keywords" content="A-Frame, VR, 3D">
   <meta name="author" content="Spyridon Eftychios Kokotos">
   <title>Multimedia - A-Frame Task</title>
-  <script src="/src/scripts/aframe.min.js"></script>
-  <script src="/src/scripts/aframe-extras.min.js"></script>
-  <script src="/src/scripts/a-water.min.js"></script>
-  <script src="/src/scripts/aframe-cursor-animator.js"></script>
-  <script src="/src/scripts/aframe-raycaster.js"></script>
-  <script src="/src/scripts/a-frame-environment-component.min.js"></script>
-  <script src="/src/scripts/day-night-toggle.js"></script>
-  <script src="/src/scripts/mistralUI.js" defer></script>
-  <script src="/src/scripts/mormugaoUI.js"></script>
-  <script src="/src/scripts/vclassUI.js"></script>
-  <script src="/src/scripts/poseidonUI.js"></script>
-  <style type="text/css" data-href="src/css/aframe.css"></style>
-  <style type="text/css" data-href="src/css/rStats.css"></style>
-  <style type="text/css" data-href="src/css/styles.css"></style>
-  <link rel="stylesheet" href="/src/css/help.css">
-  <link rel="stylesheet" href="/src/css/mistralUI.css">
-  <link rel="stylesheet" href="/src/css/mormugaoUI.css">
-  <link rel="stylesheet" href="/src/css/vclassUI.css">
-  <link rel="stylesheet" href="/src/css/poseidonUI.css">
-  <!--<link rel="stylesheet" href="/src/css/welcome.css">-->
-  <link rel="stylesheet" href="/src/css/array.css">
-  <link rel="icon" href="/src/favicon/" type="image/x-icon">
+  <script src="./src/scripts/aframe.min.js"></script>
+  <script src="./src/scripts/aframe-extras.min.js"></script>
+  <script src="./src/scripts/a-water.min.js"></script>
+  <script src="./src/scripts/aframe-cursor-animator.js"></script>
+  <script src="./src/scripts/aframe-raycaster.js"></script>
+  <script src="./src/scripts/a-frame-environment-component.min.js"></script>
+  <script src="./src/scripts/day-night-toggle.js"></script>
+  <script src="./src/scripts/mistralUI.js" defer></script>
+  <script src="./src/scripts/mormugaoUI.js"></script>
+  <script src="./src/scripts/vclassUI.js"></script>
+  <script src="./src/scripts/poseidonUI.js"></script>
+  <script src="./src/scripts/greek-flag.js"></script>
+  <script src="./src/scripts/indian-flag.js"></script>
+  <script src="./src/scripts/uk-flag.js"></script>
+  <script src="./src/scripts/france-flag.js"></script>
+  <style type="text/css" data-href="./src/css/aframe.css"></style>
+  <style type="text/css" data-href="./src/css/rStats.css"></style>
+  <style type="text/css" data-href="./src/css/styles.css"></style>
+  <link rel="stylesheet" href="./src/css/help.css">
+  <link rel="stylesheet" href="./src/css/mistralUI.css">
+  <link rel="stylesheet" href="./src/css/mormugaoUI.css">
+  <link rel="stylesheet" href="./src/css/vclassUI.css">
+  <link rel="stylesheet" href="./src/css/poseidonUI.css">
+  <link rel="stylesheet" href="./src/css/welcome.css">
+  <link rel="stylesheet" href="./src/css/array.css">
+  <link rel="stylesheet" href="./src/css/info.css">
+  <link rel="icon" href="./src/favicon/favicon.ico" type="image/x-icon">
   
 </head>
 <body>
 
 <!--Properties for the Help Button-->
-<a id="helpIcon">
-  <img src="/src/images/help.png" alt="Help" style="width: 50px; height: 50px;">
+<a id="infoIcon">
+  <img src="./src/images/info.png" alt="Info" style="width: 50px; height: 50px;">
 </a>
+
+<!--Properties for the Information Button-->
+<a id="helpIcon">
+  <img src="./src/images/help.png" alt="Help" style="width: 50px; height: 50px;">
+</a>
+
+<!--Properties for the Info UI-->
+<div id="infoUI" style="display:none;">
+  <div id="infoMessage">
+    <a href="https://ionio.gr" target="_blank"> <img class="logoTopLeft" src="./src/images/uni-logo.png" alt="Logo" id="logoTopLeft"></a> 
+    <a href="https://di.ionio.gr" target="_blank"> <img class="logoTopRight" src="./src/images/di.jpg" alt="Logo" id="logoTopRight"></a> 
+    <h2>Βοήθεια & Υποστήριξη</h2>
+    <p> Καλώς ορίσατε στην σελίδα βοήθειας & υποστήριξης</p>
+    <p> Για την σωστή λειτουργία των 3D κινήσεων, ήχων καθώς και διάδρασης θα πρέπει να ακολουθήσετε τα παρακάτω:</p>
+    
+    <!--Properties for the Array-->
+    <table id="helpTable">
+      <tr>
+        <td>1</td>
+        <td>Χρησιμοποιείστε την σελίδα μέσω υπολογιστή και όχι κινητού για να μπορείτε να κινηθείτε στον χώρο.</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Όλα τα αντικείμενα εκτός των σπιτιών του Patrick, του Spongebob & του Squidward υποστηρίζουν animation & εκπομπή ήχων.</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Περιπλανηθείτε στον χώρο με τα πλήκτρα W,A,S,D ή με τα γνωστά βελάκια.</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Για την καλύτερη απόδοση των γραφικών, καλό θα είναι να ενεργοποιήσετε εκ των προτέρων την επιλογή: "Use hardware acceleration when available"</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Σε περίπτωση που παρατηρήσετε "κολλήματα" και frame drops κατά την περιήγησή σας, φορτώστε ξανά την σελίδα, περιηγηθείτε σε όλο τον χάρτη και αφήστε τα κολλήματα να ξεκολλήσουν. Αυτό συμβαίνει γιατί είναι μεγάλα τα μοντέλα και η κάρτα γραφικών του φυλλομετρητή σας ζορίζεται.</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Επειδή η σελίδα εκπέμπει ηχητικά εφέ, θα πρέπει να έχετε ενεργοποιημένο το <bold>autoplay</bold> & τον <bold> ήχο</bold> για να τα ακούσετε.</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Eπειδή τα 3D μοντέλα είναι "ευαίσθητα" με το framework A-Frame, παρακαλείστε, να δώσετε ιδιαίτερη προσοχή στα κλίκ που κάνετε στα αντικείμενα.</td>
+      </tr>
+    </table>
+    
+    <p>Σε περίπτωση που έρθετε αντιμέτωποι με κάποιο νέο σφάλμα, παρακαλώ, να επικοινωνήσετε με τον υπεύθυνο υλοποίησης.</p>
+
+    <footer id="infoFooter">
+      <div class="footer-content">
+        <p>Powered by: A-Frame</p>
+      </div>
+      <div class="footer-bottom">
+        <p>© Σπυρίδων Ευτύχιος Κοκοτός © | Email: inf2021098@ionio.gr / skokotos@ionio.gr
+        </p>
+      </div>
+    </footer>
+    <p>Πατήστε το παρακάτω κουμπί για να πραγματοποιήσετε έξοδο από το μενού βοήθειας.</p>
+    <button id="closeInfo">Κλείσιμο Βοήθειας</button> 
+  </div>
+</div>
 
 <!--Properties for the Help UI-->
 <div id="helpUI" style="display:none;">
   <div id="helpMessage">
-    <a href="https://ionio.gr" target="_blank"> <img class="logoTopLeft" src="/src/images/uni-logo.png" alt="Logo" id="logoTopLeft"></a> 
-    <a href="https://di.ionio.gr" target="_blank"> <img class="logoTopRight" src="/src/images/di.jpg" alt="Logo" id="logoTopRight"></a> 
+    <a href="https://ionio.gr" target="_blank"> <img class="logoTopLeft" src="./src/images/uni-logo.png" alt="Logo" id="logoTopLeft"></a> 
+    <a href="https://di.ionio.gr" target="_blank"> <img class="logoTopRight" src="./src/images/di.jpg" alt="Logo" id="logoTopRight"></a> 
     <h2>Βοήθεια & Υποστήριξη</h2>
     <p> Καλώς ορίσατε στην σελίδα βοήθειας & υποστήριξης</p>
     <p> Για την σωστή λειτουργία των 3D κινήσεων, ήχων καθώς και διάδρασης θα πρέπει να ακολουθήσετε τα παρακάτω:</p>
@@ -110,14 +177,27 @@
   });
 </script>
 
+<!--Properties of the Info Script-->
+<script>
+  document.getElementById('infoIcon').addEventListener('click', function () {
+    document.getElementById('infoUI').style.display = 'block'; 
+    document.getElementById('welcomeUI').style.display = 'none'; 
+  });
 
-  <!--Properties for the Welcome Message
+  document.getElementById('closeHelp').addEventListener('click', function () {
+    document.getElementById('helpUI').style.display = 'none'; 
+  });
+</script>
+
+
+  <!--Properties for the Welcome Message -->
   <div id="welcomeUI">
     <div id="welcomeMessage">
-      <a href="https://ionio.gr" target="_blank"> <img class="logoTopLeft" src="/src/images/uni-logo.png" alt="Logo" id="logoTopLeft"></a> 
-      <a href="https://di.ionio.gr" target="_blank"> <img class="logoTopRight" src="/src/images/di.jpg" alt="Logo" id="logoTopRight"></a> 
+      <a href="https://ionio.gr" target="_blank"> <img class="logoTopLeft" src="./src/images/uni-logo.png" alt="Logo" id="logoTopLeft"></a> 
+      <a href="https://di.ionio.gr" target="_blank"> <img class="logoTopRight" src="./src/images/di.jpg" alt="Logo" id="logoTopRight"></a> 
+      <img src="./src/images/main.jpg" alt="Main Image" style="width: 300px; height: 300px; border-radius: 50%; display: block; margin: 0 auto; position: absolute; top: 50px; left: 50%; transform: translateX(-50%);">
       <h2>Καλώς ορίσατε!</h2>
-      <p>Κλικάρετε στο παρακάτω κουμπί για να ξεκινήσετε την VR εμπειρία σας.</p>
+      <p>Πατήστε το παρακάτω κουμπί για να εισέλθετε στον εικονικό κόσμο και να εξερευνήσετε τη διαδραστική εμπειρία!</p>
       <button id="enterVR">Enter VR</button> 
     </div>
     <footer id="welcomeFooter">
@@ -126,10 +206,25 @@
       </div>
       <div class="footer-bottom">
         <p>Powered by: A-Frame</p>
-        <p>© Σπυρίδων Ευτύχιος Κοκοτός | inf2021098 | Email: skokotos@ionio.gr ©</p>
+        <p>© Σπυρίδων Ευτύχιος Κοκοτός | inf2021098 | Email: skokotos@ionio.gr / inf202109@ionio.gr ©</p>
       </div>
     </footer>
-  </div> -->
+  </div> 
+
+  <!--Properties for the Background Audio -->
+  <audio id="backgroundAudio" autoplay loop>
+    <source src="./src/audio/ambient-background.mp3" type="audio/mpeg">
+  </audio>
+
+  <!--Properties for the Background Audio Script -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const backgroundAudio = document.getElementById("backgroundAudio");
+    backgroundAudio.volume = 0.01; 
+    backgroundAudio.play();
+   });
+  </script>
+  
 
   <!--Properties of the Welcome Script-->
   <script>
@@ -160,7 +255,7 @@
   <a-entity position="-57 5 -50" scale="1 1 1" rotation="0 0 0" gltf-model="#seagulls" id="#seagulls" clickable="" animation-mixer=""></a-entity>
 
   <!--Properties for the Mistral | France -->
-  <a-entity position="30 -1 -36" scale="4.5 4.5 4.5" rotation="0 360 0" gltf-model="#mistral" id="#mistral" clickable="" mistral-ui=""></a-entity>
+  <a-entity position="30 -1 -36" scale="4.5 4.5 4.5" rotation="0 360 0" gltf-model="#mistral" id="mistralEntity" clickable="" mistral-ui=""></a-entity>
 
   <!-- Properties for the Mistral UI -->
   <div id="mistralUI" style="display: none;">
@@ -171,6 +266,7 @@
         <button id="mistralInfoButton">Πληροφορίες</button>
         <button id="mistralPlaySoundButton">Aναπαραγωγή Βίντεο</button>
         <button id="mistralPhotoAlbumButton">Άλμπουμ Φωτογραφιών</button>
+        <button id="mistralMoverButton">Κίνηση Σκάφους</button>
         <button id="mistralCloseButton">Έξοδος</button>
       </div>
     </div>
@@ -187,10 +283,10 @@
   </div> 
   
   <!--Properties for the Flag of France -->
-  <a-entity position="23.5 -0.3 -20" scale="26 26 26" rotation="0 -90 0" gltf-model="#flag_france" flag-interaction="" animation-mixer=""></a-entity>
+  <a-entity position="23.5 -0.3 -20" scale="38 38 38" rotation="0 -90 0" gltf-model="#flag_france" france-flag="" animation-mixer="" clickable=""></a-entity>
 
   <!--Properties for the HS Poseidon | Greece -->
-  <a-entity position="45 -1 -36" scale="0.5 0.5 0.5" rotation="0 360 0" gltf-model="#poseidon" id="#poseidon" clickable="" poseidon-ui=""></a-entity>
+  <a-entity position="45 -1 -36" scale="0.5 0.5 0.5" rotation="0 360 0" gltf-model="#poseidon" id="poseidonEntity" clickable="" poseidon-ui=""></a-entity>
 
   <!-- Properties for the Poseidon UI -->
   <div id="poseidonUI" style="display: none;">
@@ -201,6 +297,7 @@
         <button id="poseidonInfoButton">Πληροφορίες</button>
         <button id="poseidonPlaySoundButton">Aναπαραγωγή Βίντεο</button>
         <button id="poseidonPhotoAlbumButton">Άλμπουμ Φωτογραφιών</button>
+        <button id="poseidonMoverButton">Κίνηση Σκάφους</button>
         <button id="poseidonCloseButton">Έξοδος</button>
       </div>
     </div>
@@ -220,13 +317,13 @@
   <a-entity position="40 -0.3 -33" scale="4 4 4" rotation="0 0 0" gltf-model="#pier" id="#pier"></a-entity>
 
   <!--Properties for the Flag of Greece -->
-  <a-entity position="39.5 -0.3 -20" scale="2 2 2" rotation="0 -90 0" gltf-model="#flag_greece" animation-mixer="" flag-interaction=""></a-entity>
+  <a-entity position="39.5 -0.3 -20" scale="3 3 3" rotation="0 -90 0" gltf-model="#flag_greece" animation-mixer="" greek-flag=""></a-entity>
 
   <!-- Properties for the Lighthouse Light -->
   <a-light id="lighthouseLight" type="spot" position="-42.1 21 -28.5" intensity="0" angle="40" color="#ffcc00" castShadow="true" target="#lighthouse" animation="property: rotation; to: 0 360 0; loop: true; dur: 7000"></a-light>
 
   <!--Properties for the V Class Destroyer | United Kingdom -->
-  <a-entity position="0 0.8 -33" scale="0.5 0.5 0.5" rotation="0 0 0" gltf-model="#british_v_class" id="#british_v_class"  clickable="" vclass-ui=""></a-entity>
+  <a-entity position="0 0.8 -33" scale="0.5 0.5 0.5" rotation="0 0 0" gltf-model="#british_v_class" id="vclassEntity"  clickable="" vclass-ui=""></a-entity>
 
   <!-- Properties for the V Class Destroyer UI -->
   <div id="vclassUI" style="display: none;">
@@ -237,6 +334,7 @@
         <button id="vclassInfoButton">Πληροφορίες</button>
         <button id="vclassPlaySoundButton">Aναπαραγωγή Βίντεο</button>
         <button id="vclassPhotoAlbumButton">Άλμπουμ Φωτογραφιών</button>
+        <button id="vclassMoverButton">Κίνηση Σκάφους</button>
         <button id="vclassCloseButton">Έξοδος</button>
       </div>
     </div>
@@ -253,10 +351,10 @@
   </div>
 
   <!--Properties for the Flag of United Kingdom -->
-  <a-entity position="-10 0 -20" scale="0.010 0.010 0.010" rotation="0 -90 0" gltf-model="#flag_uk" flag-interaction="" animation-mixer=""></a-entity>
+  <a-entity position="-5.5 0 -20" scale="3 3 3" rotation="0 -90 0" gltf-model="#flag_uk" id="#flag_uk" uk-flag="" animation-mixer=""></a-entity>
 
   <!--Properties for the INS Mormugao | India -->
-  <a-entity position="15 0.5 -33" scale="5 5 5" rotation="0 -90 0" gltf-model="#titanic" id="#titanic" clickable="" mormugao-ui=""></a-entity>
+  <a-entity position="15 0.5 -33" scale="5 5 5" rotation="0 -90 0" gltf-model="#mormugao" id="mormugaoEntity" clickable="" mormugao-ui=""></a-entity>
 
  <!-- Properties for the Mormugao UI -->
  <div id="mormugaoUI" style="display: none;">
@@ -267,6 +365,7 @@
       <button id="mormugaoInfoButton">Πληροφορίες</button>
       <button id="mormugaoPlaySoundButton">Aναπαραγωγή Βίντεο</button>
       <button id="mormugaoPhotoAlbumButton">Άλμπουμ Φωτογραφιών</button>
+      <button id="mormugaoMoverButton">Κίνηση Σκάφους</button>
       <button id="mormugaoCloseButton">Έξοδος</button>
     </div>
   </div>
@@ -283,7 +382,7 @@
 </div>
 
   <!--Properties for the Flag of India -->
-  <a-entity position="9 0 -20" scale="0.010 0.010 0.010" rotation="0 -90 0" gltf-model="#flag_india" flag-interaction="" animation-mixer=""></a-entity>
+  <a-entity position="9 0 -20" scale="0.008 0.008 0.008" rotation="0 -90 0" gltf-model="#flag_india" indian-flag="" animation-mixer=""></a-entity>
 
   <!--Properties for the Pier -->
   <a-entity position="-5 -0.3 -33" scale="4 4 4" rotation="0 0 0" gltf-model="#pier" id="#pier"></a-entity>
@@ -297,20 +396,24 @@
   
     <!--Properties for the Assets-->
     <a-assets>
-      <img id="skyTexture" src="/src/images/sky.jpg">
+      <img id="skyTexture" src="./src/images/sky.jpg">
       <a-asset item="" id="lighthouse" src="./src/models/lighthouse.glb"></a-asset>
       <a-asset item="" id="mistral" src="./src/models/mistral.glb"></a-asset>
       <a-asset item="" id="pier" src="./src/models/pier.glb"></a-asset>
       <a-asset item="" id="house" src="./src/models/house.glb"></a-asset>
       <a-asset item="" id="seagulls" src="./src/models/seagulls.glb"></a-asset>
       <a-asset item="" id="british_v_class" src="./src/models/british_v-class_destroyer_ww1.glb"></a-asset>
-      <a-asset item="" id="titanic" src="./src/models/bengaluru_class_destroyer_d67.glb"></a-asset>
+      <a-asset item="" id="mormugao" src="./src/models/bengaluru_class_destroyer_d67.glb"></a-asset>
       <a-asset item="" id="poseidon" src="./src/models/type_209.glb"></a-asset>
       <a-asset item="" id="pier" src="./src/models/pier.glb"></a-asset>
       <a-asset item="" id="flag_greece" src="./src/models/scene.gltf"></a-asset>
       <a-asset item="" id="flag_france" src="./src/models/france_flag.glb"></a-asset>
       <a-asset item="" id="flag_india" src="./src/models/india_flag.glb"></a-asset>
-      <a-asset item="" id="flag_uk" src="./src/models/flag.usdz"></a-asset>
+      <a-asset item="" id="flag_uk" src="./src/models/uk.glb"></a-asset>
+      <audio id="greek-horn" src="./src/audio/greece-anthem.mp3"></audio>
+      <audio id="french-horn" src="./src/audio/france-anthem.mp3"></audio>
+      <audio id="uk-horn" src="./src/audio/uk-anthem.mp3"></audio>
+      <audio id="indian-horn" src="./src/audio/india-anthem.mp3"></audio>
     </a-assets>
 
   </a-scene>
