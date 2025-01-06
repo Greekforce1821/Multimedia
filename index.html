@@ -53,60 +53,61 @@
 
 <!--Properties for the Info UI-->
 <div id="infoUI" style="display:none;">
+  <a href="https://ionio.gr" target="_blank">
+    <img class="logoTopLeft" src="./src/images/uni-logo.png" alt="Logo" id="logoTopLeft">
+  </a>
+  <a href="https://di.ionio.gr" target="_blank">
+    <img class="logoTopRight" src="./src/images/di.jpg" alt="Logo" id="logoTopRight">
+  </a>
   <div id="infoMessage">
-    <a href="https://ionio.gr" target="_blank"> <img class="logoTopLeft" src="./src/images/uni-logo.png" alt="Logo" id="logoTopLeft"></a> 
-    <a href="https://di.ionio.gr" target="_blank"> <img class="logoTopRight" src="./src/images/di.jpg" alt="Logo" id="logoTopRight"></a> 
-    <h2>Βοήθεια & Υποστήριξη</h2>
-    <p> Καλώς ορίσατε στην σελίδα βοήθειας & υποστήριξης</p>
-    <p> Για την σωστή λειτουργία των 3D κινήσεων, ήχων καθώς και διάδρασης θα πρέπει να ακολουθήσετε τα παρακάτω:</p>
-    
-    <!--Properties for the Array-->
-    <table id="helpTable">
-      <tr>
-        <td>1</td>
-        <td>Χρησιμοποιείστε την σελίδα μέσω υπολογιστή και όχι κινητού για να μπορείτε να κινηθείτε στον χώρο.</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Όλα τα αντικείμενα εκτός των σπιτιών του Patrick, του Spongebob & του Squidward υποστηρίζουν animation & εκπομπή ήχων.</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Περιπλανηθείτε στον χώρο με τα πλήκτρα W,A,S,D ή με τα γνωστά βελάκια.</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>Για την καλύτερη απόδοση των γραφικών, καλό θα είναι να ενεργοποιήσετε εκ των προτέρων την επιλογή: "Use hardware acceleration when available"</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>Σε περίπτωση που παρατηρήσετε "κολλήματα" και frame drops κατά την περιήγησή σας, φορτώστε ξανά την σελίδα, περιηγηθείτε σε όλο τον χάρτη και αφήστε τα κολλήματα να ξεκολλήσουν. Αυτό συμβαίνει γιατί είναι μεγάλα τα μοντέλα και η κάρτα γραφικών του φυλλομετρητή σας ζορίζεται.</td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>Επειδή η σελίδα εκπέμπει ηχητικά εφέ, θα πρέπει να έχετε ενεργοποιημένο το <bold>autoplay</bold> & τον <bold> ήχο</bold> για να τα ακούσετε.</td>
-      </tr>
-      <tr>
-        <td>7</td>
-        <td>Eπειδή τα 3D μοντέλα είναι "ευαίσθητα" με το framework A-Frame, παρακαλείστε, να δώσετε ιδιαίτερη προσοχή στα κλίκ που κάνετε στα αντικείμενα.</td>
-      </tr>
-    </table>
-    
-    <p>Σε περίπτωση που έρθετε αντιμέτωποι με κάποιο νέο σφάλμα, παρακαλώ, να επικοινωνήσετε με τον υπεύθυνο υλοποίησης.</p>
+    <h2>Πληροφορίες Εφαρμογής</h2>
+    <p>Η εφαρμογή αποτελεί μια πολυμεσική και καινοτόμα πλατφόρμα, σχεδιασμένη να προσφέρει μια μοναδική εμπειρία εξερεύνησης μέσα σε έναν πλούσιο, εικονικό κόσμο. 
+       Με επίκεντρο τον χρήστη και τη διαδραστικότητα, η εφαρμογή ενσωματώνει αρμονικά στοιχεία πολιτισμού, εκπαίδευσης και ψυχαγωγίας, λειτουργώντας ως μια μικρή 
+       προσομοίωση ενός ναυτικού μουσείου.</p>
 
-    <footer id="infoFooter">
-      <div class="footer-content">
-        <p>Powered by: A-Frame</p>
-      </div>
-      <div class="footer-bottom">
-        <p>© Σπυρίδων Ευτύχιος Κοκοτός © | Email: inf2021098@ionio.gr / skokotos@ionio.gr
-        </p>
-      </div>
-    </footer>
-    <p>Πατήστε το παρακάτω κουμπί για να πραγματοποιήσετε έξοδο από το μενού βοήθειας.</p>
-    <button id="closeInfo">Κλείσιμο Βοήθειας</button> 
+    <!--Properties for the Application Info Table-->
+    <table id="featuresTable">
+      <thead>
+        <tr>
+          <th>Αριθμός</th>
+          <th>Λειτουργία</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>
+            <strong>Πληροφορίες για τα πλοία:</strong> Παρέχονται αναλυτικές περιγραφές για κάθε πλοίο, καλύπτοντας την ιστορική του σημασία, την τεχνολογική του κατασκευή και τη χρήση του. Αυτές οι πληροφορίες εμπνέονται από εκθέσεις ενός ναυτικού μουσείου.
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>
+            <strong>Ακρόαση εθνικών ύμνων:</strong> Δίνει τη δυνατότητα στον χρήστη να γνωρίσει και να εκτιμήσει την πολιτισμική κληρονομιά κάθε έθνους μέσα από τη μουσική. Αυτή η λειτουργία ενισχύει τη συνολική εμπειρία με πολιτισμική διάσταση.
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>
+            <strong>Προβολή βίντεο:</strong> Κάθε πλοίο συνοδεύεται από βίντεο που παρουσιάζουν λεπτομέρειες για την κατασκευή, τη λειτουργία και την αισθητική του, εμπλουτίζοντας την εμπειρία με οπτικοακουστικό περιεχόμενο υψηλής ποιότητας.
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>
+            <strong>Δυνατότητα κίνησης:</strong> Τα πλοία μπορούν να κινηθούν, επιτρέποντας στον χρήστη να αλληλεπιδρά δυναμικά με το εικονικό περιβάλλον. Αυτή η λειτουργία μετατρέπει την εφαρμογή από στατική σε ζωντανή εμπειρία.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Η εφαρμογή συνδυάζει την τεχνολογία, την αισθητική και τη γνώση, προσφέροντας μια πλούσια εμπειρία που προσκαλεί τον χρήστη να ανακαλύψει, να μάθει και να ψυχαγωγηθεί.</p>
+
+    <button id="closeInfo">Κλείσιμο Πληροφοριών</button>
   </div>
 </div>
+
+
 
 <!--Properties for the Help UI-->
 <div id="helpUI" style="display:none;">
@@ -184,8 +185,8 @@
     document.getElementById('welcomeUI').style.display = 'none'; 
   });
 
-  document.getElementById('closeHelp').addEventListener('click', function () {
-    document.getElementById('helpUI').style.display = 'none'; 
+  document.getElementById('closeInfo').addEventListener('click', function () {
+    document.getElementById('infoUI').style.display = 'none'; 
   });
 </script>
 
